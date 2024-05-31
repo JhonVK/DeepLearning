@@ -20,5 +20,5 @@ img_shape = (128, 128, 3)
 base_model = tf.keras.applications.MobileNetV2(input_shape = img_shape, include_top = False, weights = "imagenet") #false(cabeçalho personalizado, (nao importar saida))
 base_model.summary()
 
-#congelando o modelo base
+#congelando o modelo base(nao ira atualizar os pesos)
 base_model.trainable = False
