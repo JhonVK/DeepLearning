@@ -100,11 +100,11 @@ def state_creator(data, timestep, window_size):
   starting_id = timestep - window_size + 1
 
   if starting_id >= 0:
-    # windowed_data = data[starting_id:timestep + 1] # Atualizado 14/03/2022
-    windowed_data = np.array(data[starting_id:timestep + 1]) # Atualizado 14/03/2022
+    # windowed_data = data[starting_id:timestep + 1] 
+    windowed_data = np.array(data[starting_id:timestep + 1])
   else:
-    # windowed_data = - starting_id * [data[0]] + list(data[0:timestep + 1]) # Atualizado 14/03/2022
-    windowed_data = np.array(- starting_id * [data[0]] + list(data[0:timestep + 1])) # Atualizado 14/03/2022
+    # windowed_data = - starting_id * [data[0]] + list(data[0:timestep + 1]) 
+    windowed_data = np.array(- starting_id * [data[0]] + list(data[0:timestep + 1])) 
 
   state = []
   for i in range(window_size - 1):
