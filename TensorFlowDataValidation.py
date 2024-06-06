@@ -18,13 +18,11 @@ train_stats = tfdv.generate_statistics_from_dataframe(dataframe = training_data)
 print(train_stats)
 
 #inferindo o esquema (estrutura) mostra se o parametro é obrigatorio(required)
-
 schema= tfdv.infer_schema(statistics=train_stats)
 tfdv.display_schema(schema)
 
 # Análise de dados e validação com TFDV da base de teste
 test_stats = tfdv.generate_statistics_from_dataframe(dataframe = test_set)
-
 
 #checando anomalias nos dados de teste
 anomalies = tfdv.validate_statistics(statistics = test_stats, schema = schema)
