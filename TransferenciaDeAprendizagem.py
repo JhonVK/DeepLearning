@@ -5,7 +5,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 from tqdm import tqdm_notebook
-from keras.src.legacy.preprocessing.image import ImageDataGenerator
+from keras.preprocessing.image import ImageDataGenerator
 
 #importando pasta
 dataset_path_new = "./cats_and_dogs_filtered"

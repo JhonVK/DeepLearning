@@ -83,8 +83,6 @@ import yfinance as yf
 #yfinance foi criada especificamente para o Yahoo Finance 
 #e pode oferecer mais funcionalidades específicas do Yahoo Finance.
 
-#dataset = data_reader.DataReader("AAPL", data_source = "yahoo")
-dataset = yf.download("PETR4.SA", start='2023-06-02')
 
 
 def dataset_loader(stock_name):
@@ -115,6 +113,7 @@ def state_creator(data, timestep, window_size):
 #carregando a base de dados
 stock_name = "PETR4.SA"
 data = dataset_loader(stock_name)
+
 
 #Treinando a IA
 
