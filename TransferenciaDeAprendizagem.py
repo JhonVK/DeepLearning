@@ -57,7 +57,6 @@ valid_loss, valid_accuracy = model.evaluate(valid_generator)
 print(valid_loss)
 print(valid_accuracy)
 
-
 #Fine tuning
 
 #NÃO USE Fine Tuning em toda a rede neural, pois somente em algumas camadas já é suficiente.
