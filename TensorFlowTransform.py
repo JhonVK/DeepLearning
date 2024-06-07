@@ -10,7 +10,7 @@ import apache_beam.io.iobase
 
 from tensorflow_transform.tf_metadata import dataset_metadata
 from tensorflow_transform.tf_metadata import schema_utils
-from tensorflow_transform.tf_metadata import dataset_schema
+
 
 dataset=pd.read_csv("pollution-small 1.csv")
 print(dataset.head())
@@ -23,7 +23,7 @@ print(features.head())
 dict_features = list(features.to_dict("index").values())
 
 #Definição dos metadados
-data_metadata = dataset_metadata.DatasetMetadata(dataset_schema.from_feature_spec({
+data_metadata = dataset_metadata.DatasetMetadata(schema_utils.schema_from_feature_spec({
     "no2": tf.io.FixedLenFeature([], tf.float32),
     "pm10": tf.io.FixedLenFeature([], tf.float32),
     "so2": tf.io.FixedLenFeature([], tf.float32),
@@ -61,3 +61,5 @@ def data_transform():
   for i in range(len(transformed_data)):
     print("Initial: ", dict_features[i])
     print("Transformed: ", transformed_data[i])
+
+data_transform()
