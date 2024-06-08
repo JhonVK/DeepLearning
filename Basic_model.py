@@ -70,8 +70,8 @@ print(test_loss)
 
 #salvando modelo
 model_json = model.to_json()
-with open("CriaçãodeumaAPIcomFlaskeTensorFlow2.0/fashion_model.json", "w") as json_file:
+with open("My_trained_models/fashion_model.json", "w") as json_file:
     json_file.write(model_json)
 
 #salvando os pesos da rede
-model.save_weights("CriaçãodeumaAPIcomFlaskeTensorFlow2.0/fashion_model.weights.h5")
+model.save_weights("My_trained_models/fashion_model.weights.h5")
