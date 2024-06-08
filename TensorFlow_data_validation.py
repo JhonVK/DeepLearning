@@ -57,4 +57,4 @@ serving_env_anomalies = tfdv.validate_statistics(test_set_copy_stats, schema, en
 print(tfdv.display_anomalies(serving_env_anomalies))
 
 #salvando o esquema
-tfdv.write_schema_text(schema = schema, output_path = "pollution_schema.pbtxt")
+tfdv.write_schema_text(schema = schema, output_path = "My_trained_models/pollution_schema.pbtxt")
