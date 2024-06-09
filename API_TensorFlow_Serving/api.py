@@ -48,21 +48,8 @@ model.fit(X_train,
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print("Test accuracy is {}".format(test_accuracy))
 
-#criando diretorio para o modelo
-model_dir = "model/"
-version = 1
-
-export_path = os.path.join(model_dir, str(version))
-
-import shutil
-if os.path.isdir(export_path):
-    shutil.rmtree(export_path)
-
-o = {t.name: t for t in model.outputs}
 
 #salvando o modelo para o tensor flow
+#caso use mais de 1 modelo usar outro metodo
 
-tf.saved_model.save(
-    model,
-    export_path
-)
+model.save('cifar10_model/1/')
