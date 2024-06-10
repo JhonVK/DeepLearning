@@ -1,6 +1,9 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
+import time
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 number_of_words = 20000
 max_len = 100
@@ -30,8 +33,9 @@ model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accurac
 model.summary()
 
 #treinando
-model.fit(X_train, y_train, epochs=20, batch_size=128)
-
+starting_time = time.time()
+model.fit(X_train, y_train, epochs=10, batch_size=128)
+print("Training time: {}".format(time.time() - starting_time))
 #avaliando o modelo
 test_loss, test_acurracy = model.evaluate(X_test, y_test)
 print("Test accuracy: {}".format(test_acurracy))
