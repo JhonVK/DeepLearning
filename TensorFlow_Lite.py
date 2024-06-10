@@ -32,5 +32,5 @@ converter = tf.lite.TFLiteConverter.from_keras_model(model)
 tflite_model = converter.convert()
 
 #Salvando a versão TFLite
-with open("tflite_model", "wb") as f:
+with open("My_trained_models/tflite_model", "wb") as f:
   f.write(tflite_model)
