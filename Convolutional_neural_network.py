@@ -1,6 +1,10 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from tensorflow import keras
+import time
+import os
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 cifar10 = keras.datasets.cifar10
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
@@ -26,7 +30,11 @@ model.summary()
 
 #compilando
 model.compile(loss="sparse_categorical_crossentropy", optimizer="Adam", metrics=["sparse_categorical_accuracy"])
+
+starting_time = time.time()
 model.fit(X_train, y_train, epochs=15)
+print("Training time: {}".format(time.time() - starting_time))
+
 
 #avaliando
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
